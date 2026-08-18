@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Scam & Phishing Detector</title>
+    <meta name="description" content="A professional cybersecurity tool to detect phishing attempts and cyber scams in messages.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- LOADING SCREEN -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader">
+            <div class="shield-icon"><i class="fas fa-shield-halved"></i></div>
+            <div class="loader-text">Initializing Security Scanner...</div>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+        </div>
+    </div>
+
+    <!-- SCROLL TO TOP BUTTON -->
+    <button id="scrollTopBtn" class="scroll-top-btn" title="Scroll to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- TOAST CONTAINER -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <div class="logo-icon"><i class="fas fa-shield-halved"></i></div>
+                <div class="logo-text"><span class="logo-title">PhishDetect</span><span class="logo-subtitle">Cyber Security</span></div>
+            </a>
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#analyzer" class="nav-link"><i class="fas fa-microscope"></i> Analyzer</a></li>
+                    <li><a href="#reports" class="nav-link"><i class="fas fa-history"></i> Reports</a></li>
+                    <li><a href="#statistics" class="nav-link"><i class="fas fa-chart-bar"></i> Statistics</a></li>
+                    <li><a href="#help" class="nav-link"><i class="fas fa-circle-info"></i> Help</a></li>
+                    <li><a href="#conclusion" class="nav-link"><i class="fas fa-flag-checkered"></i> Conclusion</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button id="themeToggle" class="theme-btn" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+                </div>
+            </div>
+            <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <main class="slides-viewport" aria-label="PhishDetect sections">
+        <div class="slides-track" id="slidesTrack">
+    <!-- SECTION 1: HOME / HERO -->
+    <section id="home" class="hero-section slide">
+        <div class="hero-bg-animation"><div class="matrix-rain" id="matrixRain"></div></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge"><i class="fas fa-certificate"></i> Cybersecurity Tool v2.0</div>
+            <h1 class="hero-title"><span class="title-line">Cyber Scam &</span><span class="title-line highlight">Phishing Detector</span></h1>
+            <p class="hero-subtitle">Analyze SMS, WhatsApp, Email, and Social Media messages for<br><span class="typewriter" id="typewriter"></span></p>
+            <div class="hero-stats">
+                <div class="hero-stat-item"><span class="stat-number">50+</span><span class="stat-label">Keywords</span></div>
+                <div class="hero-stat-item"><span class="stat-number">10</span><span class="stat-label">Patterns</span></div>
+                <div class="hero-stat-item"><span class="stat-number">100%</span><span class="stat-label">Offline</span></div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#analyzer" class="btn btn-primary"><i class="fas fa-microscope"></i> Start Analysis</a>
+                <a href="#how-it-works" class="btn btn-outline"><i class="fas fa-play"></i> How It Works</a>
+            </div>
+        </div>
+        <div class="scroll-indicator"><span>Use the arrows to explore</span><i class="fas fa-arrow-right"></i></div>
+    </section>
+
+    <!-- SECTION 2: ABOUT PROJECT -->
+    <section class="about-section slide" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">About Project</span>
+                <h2 class="section-title">Why This Project?</h2>
+                <p class="section-desc">Built with the principles of C Programming to demonstrate rule-based scam detection</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card glass">
+                    <div class="about-icon"><i class="fas fa-bug"></i></div>
+                    <h3>The Problem</h3>
+                    <p>3.4 billion phishing emails are sent daily. Most people can't identify sophisticated scams.</p>
+                </div>
+                <div class="about-card glass">
+                    <div class="about-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>The Solution</h3>
+                    <p>Analyzes messages using keyword matching and pattern detection — the same logic written in C.</p>
+                </div>
+                <div class="about-card glass">
+                    <div class="about-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Educational Purpose</h3>
+                    <p>A first-year C programming project demonstrating strings, arrays, structures, and file handling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: FEATURES -->
+    <section class="features-section slide" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Features</span>
+                <h2 class="section-title">Powerful Detection Engine</h2>
+                <p class="section-desc">Core detection capabilities</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card glass"><div class="feature-icon"><i class="fas fa-key"></i></div><h3>Keyword Detection</h3><p>50+ suspicious keywords with weighted risk scores</p></div>
+                <div class="feature-card glass"><div class="feature-icon"><i class="fas fa-link"></i></div><h3>URL Pattern Detection</h3><p>Detects http, https, www links and suspicious URLs</p></div>
+                <div class="feature-card glass"><div class="feature-icon"><i class="fas fa-percent"></i></div><h3>Risk Scoring</h3><p>0-100 score with LOW, MEDIUM, HIGH levels</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section slide" id="features-more">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Features</span>
+                <h2 class="section-title">Protection and Reporting</h2>
+                <p class="section-desc">Tools that help users act on a suspicious message</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card glass"><div class="feature-icon"><i class="fas fa-shield"></i></div><h3>Safety Advice</h3><p>Contextual safety tips based on detected patterns</p></div>
+                <div class="feature-card glass"><div class="feature-icon"><i class="fas fa-clock-rotate-left"></i></div><h3>History Tracking</h3><p>All analyses saved to Local Storage</p></div>
+                <div class="feature-card glass"><div class="feature-icon"><i class="fas fa-download"></i></div><h3>Export Reports</h3><p>Download results as PDF or copy to clipboard</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: HOW IT WORKS -->
+    <section class="how-it-works-section slide" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Process</span>
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-desc">The same step-by-step logic that a C program would follow</p>
+            </div>
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">01</div>
+                    <div class="step-content glass"><div class="step-icon"><i class="fas fa-paste"></i></div><h3>User Pastes Message</h3><p>Copy and paste any suspicious message</p></div>
+                    <div class="step-arrow"><i class="fas fa-arrow-down"></i></div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">02</div>
+                    <div class="step-content glass"><div class="step-icon"><i class="fas fa-font"></i></div><h3>Convert to Lowercase</h3><p>Normalized for case-insensitive analysis</p></div>
+                    <div class="step-arrow"><i class="fas fa-arrow-down"></i></div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">03</div>
+                    <div class="step-content glass"><div class="step-icon"><i class="fas fa-search"></i></div><h3>Search Keywords</h3><p>50+ scam keywords searched using strstr()</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works-section slide" id="how-it-works-more">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Process</span>
+                <h2 class="section-title">From Detection to Advice</h2>
+                <p class="section-desc">The final stages of the safety analysis</p>
+            </div>
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">04</div>
+                    <div class="step-content glass"><div class="step-icon"><i class="fas fa-chart-line"></i></div><h3>Detect Patterns</h3><p>URLs, emails, phones, ALL CAPS analyzed</p></div>
+                    <div class="step-arrow"><i class="fas fa-arrow-down"></i></div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">05</div>
+                    <div class="step-content glass"><div class="step-icon"><i class="fas fa-calculator"></i></div><h3>Calculate Risk Score</h3><p>Weighted scores summed and clamped to 0-100</p></div>
+                    <div class="step-arrow"><i class="fas fa-arrow-down"></i></div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">06</div>
+                    <div class="step-content glass"><div class="step-icon"><i class="fas fa-triangle-exclamation"></i></div><h3>Display Warning</h3><p>Results with risk level and safety advice shown</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: ANALYZER -->
+    <section class="analyzer-section slide" id="analyzer">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Analyzer</span>
+                <h2 class="section-title">Message Analysis Tool</h2>
+                <p class="section-desc">Paste a message to check for phishing indicators</p>
+            </div>
+            <div class="analyzer-container">
+                <div class="analyzer-input-panel glass">
+                    <div class="input-header">
+                        <div class="input-title"><i class="fas fa-message"></i><span>Enter Message</span></div>
+                        <div class="input-char-count"><span id="charCount">0</span> / 2000</div>
+                    </div>
+                    <textarea id="messageInput" class="message-input" placeholder="Paste the suspicious message here..." maxlength="2000" rows="8"></textarea>
+                    <div class="input-actions">
+                        <div class="input-buttons-left">
+                            <button class="btn btn-primary btn-analyze" id="analyzeBtn"><i class="fas fa-microscope"></i> Analyze</button>
+                            <button class="btn btn-secondary" id="clearBtn"><i class="fas fa-eraser"></i> Clear</button>
+                            <button class="btn btn-secondary" id="loadExampleBtn"><i class="fas fa-shuffle"></i> Load Example</button>
+                        </div>
+                </div>
+            </div>
+
+                <!-- RESULT PANEL -->
+                <div class="analyzer-result-panel glass" id="resultPanel" style="display:none;">
+                    <div class="result-header">
+                        <div class="score-ring">
+                            <svg class="score-svg" viewBox="0 0 120 120">
+                                <circle class="score-ring-bg" cx="60" cy="60" r="54"></circle>
+                                <circle class="score-ring-progress" id="scoreRingProgress" cx="60" cy="60" r="54"></circle>
+                            </svg>
+                            <div class="score-value" id="scoreValue">0</div>
+                        </div>
+                        <div class="result-summary">
+                            <div class="result-level" id="resultLevel">LOW RISK</div>
+                            <div class="result-badge" id="resultBadge"><i class="fas fa-shield"></i> Safe</div>
+                        </div>
+                    </div>
+                    <div class="result-details">
+                        <div class="detail-section">
+                            <div class="detail-title"><i class="fas fa-tags"></i> Detected Keywords</div>
+                            <div class="detail-content" id="detectedKeywords"><span class="no-data">No suspicious keywords detected.</span></div>
+                        </div>
+                        <div class="detail-section">
+                            <div class="detail-title"><i class="fas fa-list-check"></i> Reasons</div>
+                            <div class="detail-content" id="detectedReasons"><span class="no-data">No suspicious patterns detected.</span></div>
+                        </div>
+                        <div class="detail-section">
+                            <div class="detail-title"><i class="fas fa-shield-halved"></i> Safety Advice</div>
+                            <div class="detail-content" id="safetyAdvice"></div>
+                        </div>
+                        <div class="detail-section">
+                            <div class="detail-title"><i class="fas fa-gavel"></i> Recommendation</div>
+                            <div id="finalRecommendation"></div>
+                        </div>
+                        <div class="result-actions">
+                            <button class="btn btn-secondary" id="saveReportBtn"><i class="fas fa-floppy-disk"></i> Save Report</button>
+                            <button class="btn btn-secondary" id="copyResultBtn"><i class="fas fa-copy"></i> Copy</button>
+                            <button class="btn btn-secondary" id="downloadPdfBtn"><i class="fas fa-file-pdf"></i> Download PDF</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: REPORTS -->
+    <section class="reports-section slide" id="reports">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">History</span>
+                <h2 class="section-title">Previous Reports</h2>
+                <p class="section-desc">View all saved analysis results stored in your browser</p>
+            </div>
+            <div class="reports-controls">
+                <button class="btn btn-secondary" id="refreshReportsBtn"><i class="fas fa-rotate"></i> Refresh</button>
+                <button class="btn btn-secondary btn-danger" id="clearHistoryBtn"><i class="fas fa-trash"></i> Clear All</button>
+                <span class="reports-count" id="reportsCount">0 reports</span>
+            </div>
+            <div class="reports-list glass" id="reportsList">
+                <div class="no-reports">
+                    <i class="fas fa-folder-open"></i>
+                    <h3>No Reports Yet</h3>
+                    <p>Analyze a message to see reports.</p>
+                    <a href="#analyzer" class="btn btn-primary"><i class="fas fa-microscope"></i> Analyze Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: STATISTICS -->
+    <section class="statistics-section slide" id="statistics">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Analytics</span>
+                <h2 class="section-title">Scam Statistics</h2>
+                <p class="section-desc">Aggregate risk distribution across all analyzed messages</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card glass" id="statTotal">
+                    <div class="stat-card-icon"><i class="fas fa-chart-pie"></i></div>
+                    <div class="stat-card-value">0</div>
+                    <div class="stat-card-label">Total Reports</div>
+                </div>
+                <div class="stat-card glass danger" id="statHigh">
+                    <div class="stat-card-icon"><i class="fas fa-circle-exclamation"></i></div>
+                    <div class="stat-card-value">0</div>
+                    <div class="stat-card-label">High Risk</div>
+                </div>
+                <div class="stat-card glass warning" id="statMedium">
+                    <div class="stat-card-icon"><i class="fas fa-triangle-exclamation"></i></div>
+                    <div class="stat-card-value">0</div>
+                    <div class="stat-card-label">Medium Risk</div>
+                </div>
+                <div class="stat-card glass success" id="statLow">
+                    <div class="stat-card-icon"><i class="fas fa-shield"></i></div>
+                    <div class="stat-card-value">0</div>
+                    <div class="stat-card-label">Low Risk</div>
+                </div>
+            </div>
+            <div class="stats-chart glass">
+                <h3><i class="fas fa-chart-bar"></i> Risk Distribution</h3>
+                <div class="chart-bar-container">
+                    <div class="chart-bar-wrapper">
+                        <span class="chart-bar-label">HIGH</span>
+                        <div class="chart-bar-track"><div class="chart-bar-fill danger" id="chartHigh" style="width:0%"></div></div>
+                        <span class="chart-bar-value" id="chartHighVal">0</span>
+                    </div>
+                    <div class="chart-bar-wrapper">
+                        <span class="chart-bar-label">MEDIUM</span>
+                        <div class="chart-bar-track"><div class="chart-bar-fill warning" id="chartMedium" style="width:0%"></div></div>
+                        <span class="chart-bar-value" id="chartMediumVal">0</span>
+                    </div>
+                    <div class="chart-bar-wrapper">
+                        <span class="chart-bar-label">LOW</span>
+                        <div class="chart-bar-track"><div class="chart-bar-fill success" id="chartLow" style="width:0%"></div></div>
+                        <span class="chart-bar-value" id="chartLowVal">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: HELP -->
+    <section class="help-section slide" id="help">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Guide</span>
+                <h2 class="section-title">Help and Information</h2>
+                <p class="section-desc">Learn about phishing, scams, and how to stay safe online</p>
+            </div>
+            <div class="help-grid">
+                <div class="help-card glass">
+                    <div class="help-card-header"><i class="fas fa-fish"></i><h3>What is Phishing?</h3></div>
+                    <div class="help-card-body">
+                        <p>Phishing is a cyber attack where criminals impersonate legitimate organizations to steal sensitive information.</p>
+                        <ul>
+                            <li><i class="fas fa-envelope"></i> Fake emails from banks</li>
+                            <li><i class="fas fa-comment"></i> SMS claiming account blocked</li>
+                            <li><i class="fas fa-globe"></i> Fake websites mimicking real ones</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="help-card glass">
+                    <div class="help-card-header"><i class="fas fa-skull"></i><h3>What is a Cyber Scam?</h3></div>
+                    <div class="help-card-body">
+                        <p>A cyber scam is a fraudulent scheme conducted online to deceive people and steal money or personal data.</p>
+                        <ul>
+                            <li><i class="fas fa-ticket"></i> Lottery and Prize scams</li>
+                            <li><i class="fas fa-briefcase"></i> Fake job offers</li>
+                            <li><i class="fas fa-qrcode"></i> QR code scams</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="help-section slide" id="help-tips">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Guide</span>
+                <h2 class="section-title">Stay Protected</h2>
+                <p class="section-desc">Practical habits and risk-level guidance</p>
+            </div>
+            <div class="help-grid">
+                <div class="help-card glass">
+                    <div class="help-card-header"><i class="fas fa-lightbulb"></i><h3>Cybersecurity Tips</h3></div>
+                    <div class="help-card-body">
+                        <ol>
+                            <li>Never share OTP or passwords</li>
+                            <li>Verify URLs before clicking</li>
+                            <li>Beware of false urgency</li>
+                            <li>Use strong unique passwords</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="help-card glass">
+                    <div class="help-card-header"><i class="fas fa-info-circle"></i><h3>About This Tool</h3></div>
+                    <div class="help-card-body">
+                        <p>Analyzes messages for suspicious patterns using the same logic as the C program.</p>
+                        <div class="help-info-grid">
+                            <span>LOW 0-30</span>
+                            <span>MEDIUM 31-60</span>
+                            <span>HIGH 61-100</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9: CONCLUSION -->
+    <section class="conclusion-section slide" id="conclusion" style="padding:100px 0;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Conclusion</span>
+                <h2 class="section-title">Project Conclusion</h2>
+                <p class="section-desc">A comprehensive cybersecurity solution for detecting phishing and scams</p>
+            </div>
+            <div class="conclusion-content glass" style="padding:40px;margin-bottom:40px;">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;">
+                    <div>
+                        <i class="fas fa-check-circle" style="color:#00d4ff;font-size:2rem;margin-bottom:15px;"></i>
+                        <h3 style="font-family:Orbitron,sans-serif;margin-bottom:15px;">Project Achievements</h3>
+                        <ul style="list-style:none;padding:0;">
+                            <li style="padding:8px 0;color:#94a3b8;">Detects 50+ phishing keywords with weighted scoring</li>
+                            <li style="padding:8px 0;color:#94a3b8;">Identifies 10+ suspicious patterns including URLs and emails</li>
+                            <li style="padding:8px 0;color:#94a3b8;">Calculates risk score from 0-100 with three risk levels</li>
+                            <li style="padding:8px 0;color:#94a3b8;">Complete C program with 500+ lines of modular code</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <i class="fas fa-code" style="color:#00d4ff;font-size:2rem;margin-bottom:15px;"></i>
+                        <h3 style="font-family:Orbitron,sans-serif;margin-bottom:15px;">Technical Highlights</h3>
+                        <ul style="list-style:none;padding:0;">
+                            <li style="padding:8px 0;color:#94a3b8;">Uses functions, arrays, strings, structures, file handling</li>
+                            <li style="padding:8px 0;color:#94a3b8;">Menu-driven interface with switch-case</li>
+                            <li style="padding:8px 0;color:#94a3b8;">Web interface built with HTML CSS and JavaScript</li>
+                            <li style="padding:8px 0;color:#94a3b8;">Real-time analysis with visual risk indicators</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 10: TEAM CREDITS -->
+    <section class="thanks-section slide" id="thanks" style="padding:100px 0;background:var(--primary-deep);">
+        <div class="container">
+            <div class="thanks-content glass" style="padding:40px;text-align:center;">
+                <i class="fas fa-heart" style="color:#ef4444;font-size:3rem;margin-bottom:20px;"></i>
+                <h2 style="font-family:Orbitron,sans-serif;font-size:2rem;margin-bottom:10px;">Thank You</h2>
+                <p style="color:#94a3b8;max-width:600px;margin:0 auto 40px;">This project was created with dedication to help people stay safe from cyber scams.</p>
+                <h3 style="font-family:Orbitron,sans-serif;margin-bottom:30px;"><i class="fas fa-users"></i> Team CyberShield</h3>
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:900px;margin:0 auto 40px;">
+                    <div class="glass" style="padding:30px 20px;border-radius:16px;">
+                        <div style="width:70px;height:70px;background:linear-gradient(135deg,#00d4ff,#7c3aed);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;font-size:2rem;color:white;"><i class="fas fa-user-shield"></i></div>
+                        <h4>Abubacker Siddik</h4>
+                        <span style="display:block;font-size:0.8rem;color:#00d4ff;margin:5px 0 10px;">Lead Developer</span>
+                        <p style="font-size:0.85rem;color:#94a3b8;">Designed C program architecture, keyword detection engine, risk scoring system, and complete web interface.</p>
+                    </div>
+                    <div class="glass" style="padding:30px 20px;border-radius:16px;">
+                        <div style="width:70px;height:70px;background:linear-gradient(135deg,#00d4ff,#7c3aed);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;font-size:2rem;color:white;"><i class="fas fa-user-shield"></i></div>
+                        <h4>Azim Sunderwal</h4>
+                        <span style="display:block;font-size:0.8rem;color:#00d4ff;margin:5px 0 10px;">Co-Developer</span>
+                        <p style="font-size:0.85rem;color:#94a3b8;">Implemented pattern detection algorithms, file handling system, statistics module, and testing.</p>
+                    </div>
+                    <div class="glass" style="padding:30px 20px;border-radius:16px;">
+                        <div style="width:70px;height:70px;background:linear-gradient(135deg,#00d4ff,#7c3aed);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;font-size:2rem;color:white;"><i class="fas fa-user-shield"></i></div>
+                        <h4>Muhammed Yousuf</h4>
+                        <span style="display:block;font-size:0.8rem;color:#00d4ff;margin:5px 0 10px;">Documentation</span>
+                        <p style="font-size:0.85rem;color:#94a3b8;">Created project documentation, help section content, UI/UX design, safety advice generation.</p>
+                    </div>
+                </div>
+                <div style="max-width:700px;margin:0 auto 30px;">
+                    <h3 style="font-family:Orbitron,sans-serif;margin-bottom:15px;"><i class="fas fa-star"></i> Acknowledgments</h3>
+                    <p style="color:#94a3b8;font-size:0.95rem;line-height:1.7;">We extend our sincere gratitude to our professors and mentors for their guidance and support throughout this project.</p>
+                </div>
+                <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;">
+                    <p style="color:#64748b;font-style:italic;">Stay Safe. Stay Aware. Dont Get Phished!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer slide" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-icon"><i class="fas fa-shield-halved"></i></div>
+                    <div class="logo-text"><span class="logo-title">PhishDetect</span><span class="logo-subtitle">Cyber Security</span></div>
+                </div>
+                <div class="footer-text">
+                    <p>Cyber Scam and Phishing Detector - A first-year C programming project demonstrating rule-based scam detection using keyword matching and pattern recognition techniques.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#analyzer">Analyzer</a>
+                    <a href="#reports">Reports</a>
+                    <a href="#statistics">Statistics</a>
+                    <a href="#help">Help</a>
+                    <a href="#conclusion">Conclusion</a>
+                </div>
+                <div class="footer-copyright">
+                    <p>Copyright 2025 Team CyberShield. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+        </div>
+    </main>
+
+    <div class="slide-controls" aria-label="Section navigation">
+        <button id="prevSlide" class="slide-arrow slide-arrow-prev" type="button" aria-label="Previous section" title="Previous section">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <div id="slideStatus" class="slide-status" aria-live="polite">1 / 11</div>
+        <button id="nextSlide" class="slide-arrow slide-arrow-next" type="button" aria-label="Next section" title="Next section">
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
